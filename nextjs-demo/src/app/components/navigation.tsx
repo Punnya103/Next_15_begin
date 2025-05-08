@@ -1,4 +1,5 @@
 "use client";
+import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -31,6 +32,12 @@ export const Navigation = () => {
       >
         Product 1
       </Link>
+      <SignedOut>
+      <SignInButton mode="modal"/>
+      </SignedOut>
+      <SignedIn>
+      <UserButton/>
+      </SignedIn>
     </nav>
   );
 };
